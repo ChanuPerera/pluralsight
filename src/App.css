@@ -2,19 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +10,137 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 80px;
+  background: rgb(36,33,69);
+  background: linear-gradient(0deg, rgba(36,33,69,1) 0%, rgba(231,0,94,1) 100%);
 }
 
-.App-link {
-  color: #61dafb;
+
+body {
+  font-family: 'Arial', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+
+
+
+
+/* Navbar */
+.top-nav
+{
+  background-color: #131225;
+  
+}
+.bottom-nav{
+  background-color: #242145;
+}
+/* Navbar */
+.top-nav .nav-body,
+.bottom-nav .nav-body
+{
+  width: 80%;
+
+}
+.top-nav .nav-link,
+.bottom-nav .nav-link
+{
+  color: #fafafa;
+}
+.nav-link
+{
+  margin-right: 16px;
+  cursor: pointer;
+}
+.logo-holder
+{
+  width: 96px;
+  height: 96px;
+  position: relative;
+}
+.logo-holder .logo 
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-body-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafafa;
+  text-align: left;
+  justify-content: start;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+
+.collapse-btn-2
+{
+  
+}
+
+
+
+.rounded-bottom
+{
+  border-bottom-left-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+.icon-wrapper
+{
+  width: 48px;
+  height: 48px;
+  background-color: #E7005E;
+}
+
+.mr-2
+{
+  margin-right: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section {
+  padding: 60px 0;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.feature-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  color: #000;
 }
