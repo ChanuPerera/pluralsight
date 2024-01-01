@@ -85,7 +85,7 @@ const DoubleNavbar = () => {
         },
         {
           name: "Technical Technologies",
-          description: "dwad awdad ada",
+          description: "dwad awdad adaddddd",
         },
       ],
     },
@@ -129,7 +129,7 @@ const DoubleNavbar = () => {
                 </Nav.Link>
               </div>
             ))}
-            <Button variant="outline-light">Login</Button>
+            <Button variant="outline-light" className="login-btn">Login</Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -154,7 +154,9 @@ const DoubleNavbar = () => {
                   <div key={index} className="d-flex flex-row">
                     <li
                       className="nav-link"
-                      onClick={() => handleLinkItemClick(linkitem.title)}
+                      onClick={() => handleLinkItemClick(linkitem.title)
+                     }
+                     
                     >
                       {linkitem.title}
                     </li>
@@ -184,9 +186,9 @@ const DoubleNavbar = () => {
               .find((link) => link.title === selectedLink)
               .sublinks.map((sublink, subindex) => (
                 <div key={subindex} className="d-flex flex-col">
-                  <div className="nav-link d-flex flex-row p-2 justify-content-center">
+                  <div className="nav-link d-flex flex-row p-1 justify-content-start bg-white mb-1 align-items-center col-md-4 col-12 rounded">
                     <div className="icon-wrapper rounded-circle mr-2"></div>
-                    <div className="d-flex flex-column">
+                    <div className="info d-flex flex-column ">
                       <h6>
                         <strong>{sublink.name}</strong>
                       </h6>

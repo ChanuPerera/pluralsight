@@ -1,3 +1,19 @@
+
+:root{
+
+  --primary-dark: #131225;
+  --primary-blue: #242145;
+  --primary-hot-pink: #E7005E;
+  --text-color: #fafafa;
+}
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
@@ -31,11 +47,11 @@ body {
 /* Navbar */
 .top-nav
 {
-  background-color: #131225;
+  background-color: var(--primary-dark);
   
 }
 .bottom-nav{
-  background-color: #242145;
+  background-color: var(--primary-blue);
 }
 /* Navbar */
 .top-nav .nav-body,
@@ -44,10 +60,15 @@ body {
   width: 80%;
 
 }
+.login-btn
+{
+  border-radius: 44px;
+  
+}
 .top-nav .nav-link,
 .bottom-nav .nav-link
 {
-  color: #fafafa;
+  color: var(--text-color);
 }
 .nav-link
 {
@@ -66,16 +87,29 @@ body {
   width: 100%;
   height: 100%;
 }
-
+.navbar-toggler
+{
+  border: none !important;
+  color: var(--text-color) !important;
+}
 .dropdown-body-wrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fafafa;
+  background-color: #fafafa38;
   text-align: left;
   justify-content: start;
   z-index: 2;
   transition: all 0.5s ease-in-out;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--text-color);
+  
+}
+.dropdown-body .info p,
+.dropdown-body .info h6
+{
+  margin: 0;
+  padding: 0;
 }
 
 .enroll-btn
@@ -83,9 +117,17 @@ body {
   background: rgb(135,0,55);
 background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
   border: none;
-  color: #fafafa;
+  color: var(--text-color);
 }
-
+.get-btn
+{
+  background: rgb(135,0,55);
+  background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
+    border: none;
+    color: var(--text-color);
+    width: 156px;
+    height: 44px;
+}
 
 .rounded-bottom
 {
@@ -97,7 +139,7 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
 {
   width: 48px;
   height: 48px;
-  background-color: #E7005E;
+  background-color: var(--primary-hot-pink);
 }
 
 .mr-2
@@ -118,20 +160,38 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
 }
 .App-header .container h1
 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 .App-header .container p
 {
   font-weight: 200;
 }
 
+#features, #contact
+{
+  background-color: var(--primary-blue);
+}
+#features h2 
+{
+  color: var(--text-color);
+}
+
+#cta
+{
+  background-color: var(--primary-dark);
+}
 
 
-
-
-
-
-
+.brand-logo
+{
+  position: relative;
+}
+.brand-logo img 
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .section {
   padding: 60px 0;
@@ -139,22 +199,22 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
 
 .btn-primary {
   background-color: #007bff;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .btn-light {
-  background-color: #f8f9fa;
+  background-color: var(--text-color);
   color: #000;
 }
 
 .feature-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
   padding: 20px;
   margin-bottom: 20px;
 }
 
 .footer {
   padding: 20px 0;
-  background-color: #f8f9fa;
+  background-color: var(--text-color);
   color: #000;
 }

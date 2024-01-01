@@ -1,14 +1,48 @@
 import React from "react";
 import DoubleNavbar from "../components/DoubleNav";
-import Hero from "../assets/images/hero.png";
+import Hero from "../assets/images/hero2.png";
+
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+import Fb from "../assets/images/fb.png";
+import Gc from "../assets/images/gc.png";
+import Ms from "../assets/images/ms.png";
+
 
 function Landing() {
+
+
+  const brandlogo = [
+    {
+      name: "Facebook",
+      image:Fb
+    },
+    {
+      name: "Google Cloud",
+      image:Gc
+    },
+    {
+      name: "Microsoft",
+      image:Ms
+    },
+
+    {
+      name: "Facebook",
+      image:Fb
+    },
+    {
+      name: "Facebook",
+      image:Fb
+    },
+  ]
+
   return (
     <div className="App">
       <DoubleNavbar />
-      <header className="App-header">
+      <header className="App-header text-white">
         <div className="container p-5 justify-content-center align-items-center">
-          <h1>Pluralsight enables you to develop technical expertise.</h1>
+          <h1>Pluralsight enables you <br/>to develop technical expertise.</h1>
           <p>
             Cultivate essential tech competencies, reduce project timelines,
             foster more content tech teams, and turn your objectives into
@@ -17,23 +51,23 @@ function Landing() {
 
           <button
             type="button"
-            className="btn enroll-btn rounded-pill py-2 px-4"
+            className="btn get-btn rounded-pill px-4 shadow"
           >
             Get Start
           </button>
 
-          <div className="col-md-4 col-12 mx-auto position-relative">
+          <div className="col-md-10 col-lg-8 col-12 mx-auto position-relative">
             <img src={Hero} alt="hero" className="hero-img" />
           </div>
         </div>
       </header>
 
-      <section id="features" className="section">
+      <section id="features" className="section text-white">
         <div className="container">
-          <h2>Key Features</h2>
+          <h2>Our Services</h2>
           <div className="row">
-            <div className="col-md-4">
-              <div className="feature-card">
+            <div className="col-md-4 rounded-md">
+              <div className="feature-card ">
                 <h3>Feature 1</h3>
                 <p>Description of feature 1.</p>
               </div>
@@ -56,13 +90,139 @@ function Landing() {
         </div>
       </section>
 
-      <section id="cta" className="section bg-primary text-white">
+      <section id="cta" className="section text-white">
         <div className="container">
-          <h2>Ready to Get Started?</h2>
-          <p>Contact us now and boost your business.</p>
-          <a href="#contact" className="btn btn-light">
-            Contact Us
-          </a>
+  
+        {/* <Carousel
+  additionalTransfrom={0}
+  arrows
+  autoPlaySpeed={3000}
+  centerMode={false}
+  className=""
+  containerClass="container-with-dots"
+  dotListClass=""
+  draggable
+  focusOnSelect={false}
+  infinite
+  itemClass=""
+  keyBoardControl
+  minimumTouchDrag={80}
+  pauseOnHover
+  renderArrowsWhenDisabled={false}
+  renderButtonGroupOutside={false}
+  renderDotsOutside={false}
+  responsive={{
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 4,
+      partialVisibilityGutter: 40
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 3,
+      partialVisibilityGutter: 30
+    }
+  }}
+  rewind={false}
+  rewindWithAnimation={false}
+  rtl={false}
+  shouldResetAutoplay
+  showDots={false}
+  sliderClass=""
+  slidesToSlide={1}
+  swipeable
+> */}
+
+
+<Carousel
+  additionalTransfrom={0}
+  arrows
+  autoPlaySpeed={3000}
+  centerMode
+  className=""
+  containerClass="container"
+  dotListClass=""
+  draggable
+  focusOnSelect={false}
+  infinite
+  itemClass=""
+  keyBoardControl
+  minimumTouchDrag={80}
+  pauseOnHover
+  renderArrowsWhenDisabled={false}
+  renderButtonGroupOutside={false}
+  renderDotsOutside={false}
+  responsive={{
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 3,
+      partialVisibilityGutter: 40
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 1,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    }
+  }}
+  rewind={false}
+  rewindWithAnimation={false}
+  rtl={false}
+  shouldResetAutoplay
+  showDots={false}
+  sliderClass=""
+  slidesToSlide={1}
+  swipeable
+>
+
+  {brandlogo.map((logo,index) => (
+    <div className="w-100" key={index}>
+<div className="col-md-8 col-4 brand-logo">
+          <img src={logo.image} alt={logo.name}/>
+        </div>
+</div>
+        
+
+  ))}
+  
+
+          
+          
+
+          
+        </Carousel>
+
+
+
+
+
         </div>
       </section>
 
