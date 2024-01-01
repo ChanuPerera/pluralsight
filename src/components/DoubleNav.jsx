@@ -43,15 +43,15 @@ const DoubleNavbar = () => {
       sublinks: [
         {
           name: "Skill",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Courses",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Technologies",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
       ],
     },
@@ -60,15 +60,15 @@ const DoubleNavbar = () => {
       sublinks: [
         {
           name: "Products Skill",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Products Courses",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Products Technologies",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
       ],
     },
@@ -77,15 +77,15 @@ const DoubleNavbar = () => {
       sublinks: [
         {
           name: "Technical Skill",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Technical Courses",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
         {
           name: "Technical Technologies",
-          desciption: "dwad awdad ada",
+          description: "dwad awdad ada",
         },
       ],
     },
@@ -134,7 +134,7 @@ const DoubleNavbar = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <Navbar expand="lg" fluid className="bottom-nav p-0" ref={bottomNavRef}>
+      <Navbar expand="lg" fluid className="bottom-nav p-md-0" ref={bottomNavRef}>
         <div className="nav-body mx-auto justify-content-start">
         
         
@@ -142,29 +142,30 @@ const DoubleNavbar = () => {
             id="second-row"
             className="d-flex flex-row justify-content-between align-items-center"
           >
-            <div className="d-flex flex-row justify-content-between align-items-center">
-            <div className="logo-holder">
-              <Navbar.Brand href="#">
-                <img src={Logo} alt="Logo" className="logo" />
-              </Navbar.Brand>
-            </div>
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+              <div className="logo-holder d-md-block d-none">
+                <Navbar.Brand href="#">
+                  <img src={Logo} alt="Logo" className="logo" />
+                </Navbar.Brand>
+              </div>
 
-            <Nav className="mr-auto d-flex flex-row">
-              {bottomLinks.map((linkitem, index) => (
-                <div key={index} className="d-flex flex-row">
-                  <li
-                    className="nav-link"
-                    onClick={() => handleLinkItemClick(linkitem.title)}
-                  >
-                    {linkitem.title}
-                  </li>
-                </div>
-              ))}
-            </Nav>
+              <Nav className="mr-md-auto d-flex flex-row mx-auto ">
+                {bottomLinks.map((linkitem, index) => (
+                  <div key={index} className="d-flex flex-row">
+                    <li
+                      className="nav-link"
+                      onClick={() => handleLinkItemClick(linkitem.title)}
+                    >
+                      {linkitem.title}
+                    </li>
+                  </div>
+                ))}
+                 <button type="button" className="btn enroll-btn d-md-none block rounded-pill ">Enroll now</button>
+              </Nav>
             </div>
             
-            <div>
-              <button className="btn">Enroll now</button>
+            <div className="d-md-block d-none">
+              <button type="button" className="btn enroll-btn rounded-pill py-2 px-4">Enroll now</button>
             </div>
           </div>
         </div>
@@ -172,11 +173,12 @@ const DoubleNavbar = () => {
 
       {selectedLink !== null && (
         <Container
-          className={`mx-auto dropdown-body-wrapper p-5 justify-content-start rounded-bottom ${
+          className={`mx-auto  p-5 justify-content-start rounded-bottom dropdown-body-wrapper ${
             isDropdownOpen ? "open-nav" : ""
           }`}
         >
           <h5>{selectedLink} Solutions</h5>
+          <hr></hr>
           <div className="dropdown-body justify-content-start">
             {bottomLinks
               .find((link) => link.title === selectedLink)

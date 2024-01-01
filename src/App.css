@@ -10,6 +10,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
   padding: 80px;
   background: rgb(36,33,69);
   background: linear-gradient(0deg, rgba(36,33,69,1) 0%, rgba(231,0,94,1) 100%);
@@ -17,7 +18,7 @@
 
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Epilogue', sans-serif;
 }
 
 
@@ -77,11 +78,13 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-.collapse-btn-2
+.enroll-btn
 {
-  
+  background: rgb(135,0,55);
+background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
+  border: none;
+  color: #fafafa;
 }
-
 
 
 .rounded-bottom
@@ -102,14 +105,25 @@ body {
   margin-right: 0.5rem;
 }
 
-
-
-
-
-
-
-
-
+.App-header .hero-img
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.App-header .container 
+{
+  background-color: #00000021;
+  border-radius: 24px;
+}
+.App-header .container h1
+{
+  font-size: 4rem;
+}
+.App-header .container p
+{
+  font-weight: 200;
+}
 
 
 
