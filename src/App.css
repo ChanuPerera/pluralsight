@@ -48,10 +48,12 @@ body {
 .top-nav
 {
   background-color: var(--primary-dark);
+  z-index: 5;
   
 }
 .bottom-nav{
   background-color: var(--primary-blue);
+  z-index: 5;
 }
 /* Navbar */
 .top-nav .nav-body,
@@ -92,7 +94,10 @@ body {
   border: none !important;
   color: var(--text-color) !important;
 }
-.dropdown-body-wrapper {
+
+
+
+/* .dropdown-body-wrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -103,7 +108,88 @@ body {
   transition: all 0.5s ease-in-out;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--text-color);
-  
+}
+
+.dropdown-body-wrapper.show {
+  display: block; 
+  animation: slideUp 0.3s ease-in-out; 
+ }
+ 
+ @keyframes slideUp {
+  from { top: -50%; }
+  to { top: 0; }
+ }
+ 
+ @keyframes slideDown {
+  from { top: 0; }
+  to { top: -50%; }
+ } */
+
+
+
+ .dropdown-body-wrapper {
+
+
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+
+  /* top: -50%;
+  transform: translateY(-100%); */
+ 
+  background-color: #fafafa38;
+  text-align: left;
+  justify-content: start;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--text-color);
+  animation: slide-down 0.5s forwards;
+
+ }
+
+
+ .dropdown-body-wrapper.slide-up
+ {
+  animation: slide-up 0.5s forwards;
+ }
+ 
+ /* .dropdown-body-wrapper.show {
+  top: 0;
+ } */
+
+
+ @keyframes slide-down {
+  0% {
+    transform: translateX(-50%);
+    transform: translateY(-100%);
+ }
+  100% {
+    transform: translateX(-50%);
+    transform: translateY(0%);
+ }
+}
+
+
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0%);
+ }
+  100% {
+    transform: translateY(-100%);
+ }
+}
+
+
+
+
+
+.drop-container
+{
+  background-color: #007bff !important;
+  position: relative;
 }
 .dropdown-body .info p,
 .dropdown-body .info h6
@@ -118,6 +204,10 @@ body {
 background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
   border: none;
   color: var(--text-color);
+}
+
+.enroll-btn :hover{
+  color: var(--text-color) !important;
 }
 .get-btn
 {
@@ -167,7 +257,7 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
   font-weight: 200;
 }
 
-#features, #contact
+#features
 {
   background-color: var(--primary-blue);
 }
@@ -176,11 +266,14 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
   color: var(--text-color);
 }
 
-#cta
+#cta,#contact
 {
   background-color: var(--primary-dark);
 }
-
+.footer
+{
+  background-color: var(--primary-blue) !important;
+}
 
 .brand-logo
 {

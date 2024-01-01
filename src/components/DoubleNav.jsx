@@ -16,11 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const DoubleNavbar = () => {
-  const [showDropdown, setShowDropdown] = useState(null);
-  const [bottomNavHeight, setBottomNavHeight] = useState(0);
-  const [selectedLink, setSelectedLink] = useState(null);
-  const bottomNavRef = useRef(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+ 
 
   const links = [
     {
@@ -91,29 +87,75 @@ const DoubleNavbar = () => {
     },
   ];
 
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const toggleDropdown = (title) => {
+    if (selectedLink === title) {
+      setIsDropdownOpen(!isDropdownOpen);
+    } else {
+      setIsDropdownOpen(true);
+      setSelectedLink(title);
+    }
+  };
+
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        bottomNavRef.current &&
-        !bottomNavRef.current.contains(event.target) &&
-        isDropdownOpen
-      ) {
+    const handleScroll = () => {
+      if (isDropdownOpen) {
         setIsDropdownOpen(false);
       }
     };
 
-    window.addEventListener("click", handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [bottomNavRef, isDropdownOpen]);
+  }, [isDropdownOpen]);
 
-  const handleLinkItemClick = (title) => {
-    setSelectedLink((prev) => (prev === title ? null : title));
-    setIsDropdownOpen(!isDropdownOpen);
+
+
+  const renderDropdownContent = () => {
+    if (!selectedLink) {
+      return null;
+    }
+
+    const selectedLinkData = bottomLinks.find((link) => link.title === selectedLink);
+
+    if (!selectedLinkData) {
+      return null;
+    }
+
+
+
+    
+
+    return (
+      <>
+        <h5>{selectedLinkData.title} Solutions</h5>
+        <hr />
+        <div className="dropdown-body justify-content-start">
+          {selectedLinkData.sublinks.map((sublink, subindex) => (
+            <div key={subindex} className="d-flex flex-col">
+              <div className="nav-link d-flex flex-row p-1 justify-content-start bg-white mb-1 align-items-center col-md-4 col-12 rounded">
+                <div className="icon-wrapper rounded-circle mr-2"></div>
+                <div className="info d-flex flex-column ">
+                  <h6>
+                    <strong>{sublink.name}</strong>
+                  </h6>
+                  <p>{sublink.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    );
   };
-
+  
   return (
     <>
       <Navbar expand="lg" fluid className="top-nav">
@@ -134,7 +176,7 @@ const DoubleNavbar = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      <Navbar expand="lg" fluid className="bottom-nav p-md-0" ref={bottomNavRef}>
+      <Navbar expand="lg" fluid className="bottom-nav p-md-0" >
         <div className="nav-body mx-auto justify-content-start">
         
         
@@ -154,9 +196,7 @@ const DoubleNavbar = () => {
                   <div key={index} className="d-flex flex-row">
                     <li
                       className="nav-link"
-                      onClick={() => handleLinkItemClick(linkitem.title)
-                     }
-                     
+                      onClick={() => toggleDropdown(linkitem.title)}
                     >
                       {linkitem.title}
                     </li>
@@ -173,18 +213,16 @@ const DoubleNavbar = () => {
         </div>
       </Navbar>
 
-      {selectedLink !== null && (
-        <Container
-          className={`mx-auto  p-5 justify-content-start rounded-bottom dropdown-body-wrapper ${
-            isDropdownOpen ? "open-nav" : ""
-          }`}
-        >
-          <h5>{selectedLink} Solutions</h5>
+
+<div className="container drop-container ">
+{/* {isDropdownOpen && (
+<Container className={`mx-auto  p-5 justify-content-start rounded-bottom dropdown-body-wrapper ${isDropdownOpen ? '' : 'slide-up'}`}>
+       {bottomLinks.map((link,index) => (
+ <div className="" key={index}>
+<h5>{link.title} Solutions</h5>
           <hr></hr>
           <div className="dropdown-body justify-content-start">
-            {bottomLinks
-              .find((link) => link.title === selectedLink)
-              .sublinks.map((sublink, subindex) => (
+            {link.sublinks.map((sublink, subindex) => (
                 <div key={subindex} className="d-flex flex-col">
                   <div className="nav-link d-flex flex-row p-1 justify-content-start bg-white mb-1 align-items-center col-md-4 col-12 rounded">
                     <div className="icon-wrapper rounded-circle mr-2"></div>
@@ -198,8 +236,33 @@ const DoubleNavbar = () => {
                 </div>
               ))}
           </div>
+ </div>
+
+       ))}
+      
+          
         </Container>
-      )}
+)} */}
+
+
+
+
+
+
+
+
+
+
+
+{isDropdownOpen && (
+          <Container className={`mx-auto p-5 justify-content-start rounded-bottom dropdown-body-wrapper ${isDropdownOpen ? '' : 'slide-up'}`}>
+            {renderDropdownContent()}
+          </Container>
+        )}
+
+</div>
+      
+      
     </>
   );
 };

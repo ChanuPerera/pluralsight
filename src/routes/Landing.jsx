@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import DoubleNavbar from "../components/DoubleNav";
 import Hero from "../assets/images/hero2.png";
 
@@ -8,7 +8,8 @@ import 'react-multi-carousel/lib/styles.css';
 import Fb from "../assets/images/fb.png";
 import Gc from "../assets/images/gc.png";
 import Ms from "../assets/images/ms.png";
-
+import Oc from "../assets/images/Oc.png";
+import AWS from "../assets/images/aws.png";
 
 function Landing() {
 
@@ -28,14 +29,24 @@ function Landing() {
     },
 
     {
-      name: "Facebook",
-      image:Fb
+      name: "Oracle",
+      image:Oc
     },
     {
-      name: "Facebook",
-      image:Fb
+      name: "AWS",
+      image:AWS
     },
   ]
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="App">
@@ -93,59 +104,6 @@ function Landing() {
       <section id="cta" className="section text-white">
         <div className="container">
   
-        {/* <Carousel
-  additionalTransfrom={0}
-  arrows
-  autoPlaySpeed={3000}
-  centerMode={false}
-  className=""
-  containerClass="container-with-dots"
-  dotListClass=""
-  draggable
-  focusOnSelect={false}
-  infinite
-  itemClass=""
-  keyBoardControl
-  minimumTouchDrag={80}
-  pauseOnHover
-  renderArrowsWhenDisabled={false}
-  renderButtonGroupOutside={false}
-  renderDotsOutside={false}
-  responsive={{
-    desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024
-      },
-      items: 4,
-      partialVisibilityGutter: 40
-    },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0
-      },
-      items: 2,
-      partialVisibilityGutter: 30
-    },
-    tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464
-      },
-      items: 3,
-      partialVisibilityGutter: 30
-    }
-  }}
-  rewind={false}
-  rewindWithAnimation={false}
-  rtl={false}
-  shouldResetAutoplay
-  showDots={false}
-  sliderClass=""
-  slidesToSlide={1}
-  swipeable
-> */}
 
 
 <Carousel
@@ -237,6 +195,7 @@ function Landing() {
           <p>&copy; 2024 Your Company. All rights reserved.</p>
         </div>
       </footer>
+
     </div>
   );
 }
