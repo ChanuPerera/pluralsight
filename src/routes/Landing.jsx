@@ -176,7 +176,7 @@ function Landing() {
 
       <footer className="footer">
         <div className="container text-white">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
+          <p>&copy; 2024 Pluralsight. All rights reserved.</p>
         </div>
       </footer>
     </div>
