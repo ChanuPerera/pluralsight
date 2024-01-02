@@ -5,46 +5,18 @@
   --primary-blue: #242145;
   --primary-hot-pink: #E7005E;
   --text-color: #fafafa;
+  --hidden-text: rgba(224, 224, 224, 0.576);
 }
 
-
-
-
-
-
-
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-
-  padding: 80px;
-  background: rgb(36,33,69);
-  background: linear-gradient(0deg, rgba(36,33,69,1) 0%, rgba(231,0,94,1) 100%);
-}
 
 
 body {
   font-family: 'Epilogue', sans-serif;
 }
 
-
-
-
-
-
-
-
-/* Navbar */
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Navbar Styles*------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
 .top-nav
 {
   background-color: var(--primary-dark);
@@ -55,7 +27,7 @@ body {
   background-color: var(--primary-blue);
   z-index: 5;
 }
-/* Navbar */
+
 .top-nav .nav-body,
 .bottom-nav .nav-body
 {
@@ -77,6 +49,8 @@ body {
   margin-right: 16px;
   cursor: pointer;
 }
+
+
 .logo-holder
 {
   width: 96px;
@@ -96,49 +70,16 @@ body {
 }
 
 
-
-/* .dropdown-body-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fafafa38;
-  text-align: left;
-  justify-content: start;
-  z-index: 2;
-  transition: all 0.5s ease-in-out;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--text-color);
-}
-
-.dropdown-body-wrapper.show {
-  display: block; 
-  animation: slideUp 0.3s ease-in-out; 
- }
- 
- @keyframes slideUp {
-  from { top: -50%; }
-  to { top: 0; }
- }
- 
- @keyframes slideDown {
-  from { top: 0; }
-  to { top: -50%; }
- } */
-
-
-
- .dropdown-body-wrapper {
+.dropdown-body-wrapper {
 
 
   width: 100%;
   height: auto;
   overflow-y: auto;
   transition: all 0.3s ease-in-out;
-  position: fixed;
-
-  /* top: -50%;
-  transform: translateY(-100%); */
- 
+  position:fixed; 
+  margin-left: auto;
+  margin-right: auto;
   background-color: #fafafa38;
   text-align: left;
   justify-content: start;
@@ -149,15 +90,15 @@ body {
 
  }
 
+ .drop-container
+ {
+  padding-left: 0 !important;
+ }
 
  .dropdown-body-wrapper.slide-up
  {
   animation: slide-up 0.5s forwards;
  }
- 
- /* .dropdown-body-wrapper.show {
-  top: 0;
- } */
 
 
  @keyframes slide-down {
@@ -182,21 +123,135 @@ body {
  }
 }
 
-
-
-
-
-.drop-container
-{
-  background-color: #007bff !important;
-  position: relative;
-}
 .dropdown-body .info p,
 .dropdown-body .info h6
 {
   margin: 0;
   padding: 0;
 }
+
+
+.selected-link {
+  color: var(--primary-hot-pink) !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Navbar Styles*------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Header Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  padding: 80px;
+  background: rgb(36,33,69);
+  background: linear-gradient(0deg, rgba(36,33,69,1) 0%, rgba(231,0,94,1) 100%);
+}
+
+
+.App-header .hero-img
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.App-header .container 
+{
+  background-color: #00000021;
+  border-radius: 24px;
+}
+.App-header .container h1
+{
+  font-size: 3.5rem;
+}
+.App-header .container p
+{
+  font-weight: 200;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Header Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Servive Section Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+.service-icon-wrapper
+{
+  background-color: var(--primary-hot-pink);
+  height: 56px;
+  width: 56px;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ Servive Section Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ BUtton Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
 
 .enroll-btn
 {
@@ -219,6 +274,13 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
     height: 44px;
 }
 
+
+/*--------------------------------------------------------------------------------------------*/
+/*------------------------------ BUtton Styles------------------------------*/
+/*--------------------------------------------------------------------------------------------*/
+
+
+
 .rounded-bottom
 {
   border-bottom-left-radius: 24px !important;
@@ -235,26 +297,6 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
 .mr-2
 {
   margin-right: 0.5rem;
-}
-
-.App-header .hero-img
-{
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.App-header .container 
-{
-  background-color: #00000021;
-  border-radius: 24px;
-}
-.App-header .container h1
-{
-  font-size: 3.5rem;
-}
-.App-header .container p
-{
-  font-weight: 200;
 }
 
 #features
@@ -301,11 +343,19 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
 }
 
 .feature-card {
-  border: 1px solid var(--text-color);
+  
+background: rgb(19,18,37);
+background: linear-gradient(0deg, rgba(19,18,37,1) 0%, rgba(36,33,69,1) 100%);
   padding: 20px;
   margin-bottom: 20px;
+  -webkit-box-shadow: 1px 25px 22px -4px rgba(19,18,37,0.45);
+-moz-box-shadow: 1px 25px 22px -4px rgba(19,18,37,0.45);
+box-shadow: 1px 25px 22px -4px rgba(19,18,37,0.45);
 }
-
+.feature-card p 
+{
+  color: var(--hidden-text);
+}
 .footer {
   padding: 20px 0;
   background-color: var(--text-color);
