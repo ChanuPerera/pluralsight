@@ -260,8 +260,16 @@ background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
   border: none;
   color: var(--text-color);
 }
-
-.enroll-btn :hover{
+.m-enroll-btn
+{
+  background: rgb(135,0,55);
+background: linear-gradient(236deg, rgba(135,0,55,1) 0%, rgba(231,0,94,1) 100%);
+  border: none;
+  color: var(--text-color);
+  height: 32px !important;
+  font-size: 0.8rem;
+}
+.enroll-btn :hover, .m-enroll-btn:hover{
   color: var(--text-color) !important;
 }
 .get-btn

@@ -201,16 +201,16 @@ const DoubleNavbar = () => {
         <div className="nav-body mx-auto justify-content-start">
           <div
             id="second-row"
-            className="d-flex flex-row justify-content-between align-items-center"
+            className="d-md-flex flex-row justify-content-between align-items-center"
           >
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div className="d-md-flex flex-column flex-md-row justify-content-between align-items-center">
               <div className="logo-holder d-md-block d-none">
                 <Navbar.Brand href="#">
                   <img src={Logo} alt="Logo" className="logo" />
                 </Navbar.Brand>
               </div>
 
-              <Nav className="mr-md-auto d-flex flex-row mx-auto ">
+              <Nav className="mr-md-auto d-flex flex-row mx-auto justify-content-center align-items-center ">
                 {bottomLinks.map((linkitem, index) => (
                   <div key={index} className="d-flex flex-row">
                     <li
@@ -229,7 +229,7 @@ const DoubleNavbar = () => {
                 ))}
                 <button
                   type="button"
-                  className="btn enroll-btn d-md-none block rounded-pill "
+                  className="m-enroll-btn d-md-none block rounded-pill px-4 "
                 >
                   Enroll
                 </button>
